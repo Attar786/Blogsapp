@@ -5,7 +5,9 @@ export default function Post ()
         <div className="image">
         <img src="https://wpassets.graana.com/blog/wp-content/uploads/2023/05/Wahdat-Colony-Lahore1-645x338.jpg.webp" alt="" />
         </div>
-   
+   <h2>
+    hah
+   </h2>
       <div className="text">
       <h2>Overview of Wahdat Colony Lahore</h2>
       <p className='info'>
