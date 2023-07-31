@@ -1,5 +1,11 @@
 const express = require('express');
+
+const bcrypt = require('bcryptjs');
+
 const app = express();
+
+const  salt = bcrypt.genSaltSync(10);
+
 const cors = require('cors');
 const { default: mongoose } = require('mongoose');
 // const User = require('./models/User')
@@ -12,7 +18,8 @@ app.post('/register',  (req,res)=>
     const {username, password} = req.body;
     
     try{
-        const userDoc =  User.create({username, password});
+        const userDoc =  User.create({username, password:bcrypt.hashSync(password,salt),
+        });
         res.json(userDoc);
     }
     catch(e) {
